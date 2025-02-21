@@ -1,0 +1,21 @@
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+        res={}
+        for i in nums:
+            if i in res:
+                res[i]+=1
+            else:
+                res[i]=1
+        
+        maxcount=0
+        element=None
+
+        for num,count in res.items():
+            if count>maxcount:
+                maxcount=count
+                element=num
+            
+        return element
+        
+
+                
